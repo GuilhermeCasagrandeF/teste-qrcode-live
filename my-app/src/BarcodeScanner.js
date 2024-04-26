@@ -10,7 +10,7 @@ const BarcodeScanner = ({onScan}) => {
 
     return (
         <>
-            <video ref={ref} />
+            <video ref={ref} style={{width: "100%"}} />
         </>
     );
 }

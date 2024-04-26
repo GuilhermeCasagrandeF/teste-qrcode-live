@@ -19,7 +19,7 @@ const QrcodeScanner = ({ onScan }) => {
 
     return (
         <div>
-            <video ref={videoRef} playsInline />
+            <video ref={videoRef} playsInline style={{width: "100%"}} />
         </div>
     );
 };

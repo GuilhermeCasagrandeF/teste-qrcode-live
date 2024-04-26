@@ -14,15 +14,21 @@ function App() {
 
           <button onClick={() =>setScanQrCode(!scanQrcode)}>Escanear Qrcode</button>
 
-          {(scanQrcode && !qrcodeResult) &&
-              <QrcodeScanner onScan={(result) => setQrcodeResult(result)} />
+          {scanQrcode &&
+              <QrcodeScanner onScan={(result) => {
+                  setScanQrCode(false);
+                  setQrcodeResult(result)
+              }} />
           }
 
           <br/>
           <button onClick={() => setScanBarcode(!scanBarcode)}>Escanear Barcode</button>
 
-          {(scanBarcode && !barcodeResult) &&
-            <BarcodeScanner onScan={(result) => setBarcodeResult(result)} />
+          {scanBarcode &&
+            <BarcodeScanner onScan={(result) => {
+                setScanBarcode(false);
+                setBarcodeResult(result)
+            }} />
           }
 
           {qrcodeResult &&
