@@ -8,7 +8,6 @@ const QrcodeScanner = ({ onScan }) => {
         const qrScanner = new QrScanner(videoRef.current, result => {
             qrScanner.stop();
             onScan(result);
-            alert(result);
         });
 
         qrScanner.start();
