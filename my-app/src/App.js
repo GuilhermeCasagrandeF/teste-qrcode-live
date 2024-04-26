@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import QrcodeScanner from "./QrcodeScanner";
+import {useState} from "react";
 
 function App() {
+    const [qrcodeResult, setQrcodeResult] = useState(null);
   return (
     <div className="App">
       <header className="App-header">
@@ -19,7 +21,13 @@ function App() {
           Learn React
         </a>
 
-          <QrcodeScanner />
+          <QrcodeScanner onScan={(result) => setQrcodeResult(result)} />
+
+          {qrcodeResult &&
+              <p style={{background: "red", padding: "40px", width: "100%"}}>
+                  {qrcodeResult}
+              </p>
+          }
       </header>
     </div>
   );
